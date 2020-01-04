@@ -19,7 +19,7 @@ public class SortingExample {
 
         System.out.println(madMen);
 
-        Collections.sort(madMen,new AgeComparator());
+        Collections.sort(madMen, new AgeComparator());
 
         System.out.println(madMen);
 
