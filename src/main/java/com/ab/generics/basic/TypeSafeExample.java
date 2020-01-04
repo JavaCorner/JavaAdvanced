@@ -1,21 +1,21 @@
 package com.ab.generics.basic;
 
-public class TypeUnsafeExample {
+public class TypeSafeExample {
     public static void main(String[] args) {
-        CircularBuffer buffer = new CircularBuffer(10);
+        GenericCircularBuffer<String> buffer = new GenericCircularBuffer<String>(10);
         buffer.offer("a");
         buffer.offer("bc");
         buffer.offer("d");
 
-        //buffer.offer(1); //Leads to ClassCastException
+        //buffer.offer(1); //Leads to compile time error
         String value = concatenate(buffer);
         System.out.println(value);
     }
 
-    private static String concatenate(CircularBuffer buffer) {
+    private static String concatenate(GenericCircularBuffer<String> buffer) {
         StringBuilder result = new StringBuilder();
         String value;
-        while((value = (String) buffer.poll()) != null){
+        while((value = buffer.poll()) != null){
             result.append(value);
         }
         return result.toString();
