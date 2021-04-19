@@ -20,7 +20,7 @@ public class Legacy {
         List<Integer> integers = new ArrayList();
         integers = list;
         List<String> strings = new ArrayList();
-        //list = strings;
+        list = strings;
 
         Iterator iterator = list.iterator();
         while (iterator.hasNext()){

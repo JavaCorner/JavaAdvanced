@@ -7,7 +7,7 @@ public class TypeUnsafeExample {
         buffer.offer("bc");
         buffer.offer("d");
 
-        //buffer.offer(1); //Leads to ClassCastException
+        buffer.offer(1); //Leads to ClassCastException
         String value = concatenate(buffer);
         System.out.println(value);
     }

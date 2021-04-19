@@ -2,12 +2,12 @@ package com.ab.generics.basic;
 
 public class TypeSafeExample {
     public static void main(String[] args) {
-        GenericCircularBuffer<String> buffer = new GenericCircularBuffer<String>(10);
+        GenericCircularBuffer<String> buffer = new GenericCircularBuffer<>(10);
         buffer.offer("a");
         buffer.offer("bc");
         buffer.offer("d");
 
-        //buffer.offer(1); //Leads to compile time error
+        //buffer.offer(1); //compile time error
         String value = concatenate(buffer);
         System.out.println(value);
     }

@@ -8,7 +8,13 @@ public class AgeComparator implements Comparator<Person> {
 
     @Override
     public int compare(Person o1, Person o2) {
-        return Integer.compare(o1.getAge(),o2.getAge());
-        //return -1 * Integer.compare(o1.getAge(),o2.getAge()); for sorting in descending order
+        //ascending order
+        //return Integer.compare(o1.getAge(),o2.getAge());
+        //or
+        return o1.getAge() - o2.getAge();
+        //descending order
+        //return -1 * Integer.compare(o1.getAge(),o2.getAge());
+        //or
+        //return o2.getAge() - o1.getAge();
     }
 }

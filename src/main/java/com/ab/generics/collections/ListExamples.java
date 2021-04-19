@@ -11,14 +11,14 @@ public class ListExamples {
         Person donDrapper = new Person("Don Drapper", 89);
         Person peggyOlson = new Person("Peggy Olson", 65);
 
-        List<Person> madMen = new ArrayList<Person>();
+        List<Person> madMen = new ArrayList<>();
         madMen.add(donDrapper);
         madMen.add(peggyOlson);
 
         System.out.println(madMen);
 
         madMen.add(new Person("Bert Cooper", 100));
-        //madMen.add(new Object());
+        //madMen.add(new Object());//compile error
         System.out.println(madMen);
 
         for (int i = 0; i < madMen.size(); i++) {

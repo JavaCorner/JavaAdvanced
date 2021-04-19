@@ -20,14 +20,22 @@ public class ListMinimumGeneric {
 
         System.out.println(madMen);
 
-        final Person youngestPerson = min(madMen, new AgeComparator());
+        //final Person youngestPerson = min(madMen, new AgeComparator());
 
         /*final Person youngestPerson = min(madMen, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return 0;
             }
-        });*/ //leads to compile time error
+        });*/ //compile error
+
+        final Person youngestPerson = min(madMen, new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getAge() - o2.getAge();
+            }
+        });
+
         System.out.println(youngestPerson);
 
         List<Integer> numbers = new ArrayList<>();
