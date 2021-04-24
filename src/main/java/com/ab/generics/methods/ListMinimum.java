@@ -4,6 +4,7 @@ import com.ab.generics.classes_and_interfaces.AgeComparator;
 import com.ab.generics.model.Person;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
@@ -47,5 +48,9 @@ public class ListMinimum {
             }
         }
         return lowestElement;
+    }
+
+    public static void test(Collection<?> collection){
+
     }
 }
