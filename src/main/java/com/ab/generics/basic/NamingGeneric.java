@@ -1,24 +1,30 @@
 package com.ab.generics.basic;
 
+/**
+ * @author Arpit Bhardwaj
+ *
+ * A Genric Type could be a word or a single letter
+ */
 
 //Allowed
-public class NamingGeneric<C> {
+public class NamingGeneric<ClassGeneric> {
 
-    public <M> M test(M t){
+    public <MethodGeneric> MethodGeneric test(MethodGeneric t){
         return null;
     }
 
     public <N> N test3(N t){
         return null;
     }
-    public <M> M test4(C t){
+    public <M> M test4(ClassGeneric t){
         return null;
     }
-    public <M> C test5(M t){
+    public <M> ClassGeneric test5(M t){
         return null;
     }
-    //here C hides the C Type at class level
-    public <C> C test2(C t){
+
+    //here ClassGeneric hides the ClassGeneric Type at class level
+    public <ClassGeneric> ClassGeneric test2(ClassGeneric t){
         return null;
     }
 }
