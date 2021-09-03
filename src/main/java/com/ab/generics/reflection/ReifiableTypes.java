@@ -6,8 +6,8 @@ import java.util.List;
 /**
  * Types that are reifiable can be reflected
  * Primitives
- * Non Parameterized Class/inteface
- * All Type arguments unbounded wildcards
+ * Non parameterized class/interface
+ * All type arguments unbounded wildcards
  * Raw Types
  * Arrays
  *

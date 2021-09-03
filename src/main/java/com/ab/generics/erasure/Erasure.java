@@ -4,15 +4,38 @@ import java.util.List;
 
 /**
  * @author Arpit Bhardwaj
+ *
+ * Compiler earses information about generics from compiled code.
+ *      compiler verifies type safety of your code before erasing generics
+ *      compiler add relevant typecasting operations
  */
-public class Erasure<T,B extends Comparable<B>> {
-    public void unBounded(T param){
 
+//original source code
+public class Erasure<T> {
+    public T apply(T t){
+        return t;
     }
-    public void lists(List<String> param1, List<List<T>> param2){
-
-    }
-    public void bounded(B param){
-
+    public static void main(String[] args) {
+        Erasure<String> e = new Erasure<>();
+        String apply = e.apply("");
     }
 }
+
+/*
+//Compiled Code
+
+public class Erasure {
+    public Object apply(Object t){
+        return t;
+    }
+    public static void main(String[] args) {
+        Erasure<String> e = new Erasure<>();
+        String apply = (String) e.apply("");
+    }
+}
+ */
+
+
+
+
+
