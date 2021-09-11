@@ -7,6 +7,8 @@ import java.util.function.UnaryOperator;
 
 /**
  * @author Arpit Bhardwaj
+ *
+ * Compiler adds bridge synthetic method for backword compatability
  */
 //original source code
 public class Legacy implements UnaryOperator<String> {

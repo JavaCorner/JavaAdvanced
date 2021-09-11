@@ -1,15 +1,18 @@
 package com.ab.generics.limitation;
 
 /**
- * Compile time error: Generic class may not extend 'java.lang.Throwable'
  * @author Arpit Bhardwaj
+ *
+ * Generic Exceptions are not allowed in java
+ * means any class that extends throwable cannot be generic
+ *
  */
 public class UncompilableException/*<T>*/ extends Throwable {
 
     public static void main(String[] args) {
         try{
             throw new UncompilableException();
-        }catch(UncompilableException/*<T>*/ e){
+        }catch(UncompilableException e){
             e.printStackTrace();
         }
     }

@@ -46,14 +46,14 @@ public class ListMinimumGeneric {
         System.out.println(min(numbers,Integer::compare));
 
     }
-    private static <T> T min(List<T> values, Comparator<T> comparator) {
+    private static <M> M min(List<M> values, Comparator<M> comparator) {
         if (values.isEmpty()) {
             throw new IllegalArgumentException("List is empty, cannot find minimum");
         }
 
-        T lowestElement = values.get(0);
+        M lowestElement = values.get(0);
         for (int i = 1; i < values.size(); i++) {
-            final T element = values.get(i);
+            final M element = values.get(i);
             if (comparator.compare(element, lowestElement) < 0) {
                 lowestElement = element;
             }

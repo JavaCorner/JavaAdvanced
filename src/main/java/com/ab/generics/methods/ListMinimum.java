@@ -50,7 +50,5 @@ public class ListMinimum {
         return lowestElement;
     }
 
-    public static void test(Collection<?> collection){
-
-    }
+    public static void test(Collection<?> collection){}
 }

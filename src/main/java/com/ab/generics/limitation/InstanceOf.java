@@ -2,11 +2,13 @@ package com.ab.generics.limitation;
 
 /**
  * @author Arpit Bhardwaj
+ *
+ * generics in instanceOf not allowed
  */
 public class InstanceOf<T> {
     @Override
     public boolean equals(Object obj) {
-        //generics in instanceOf not allowed
+
         if(obj instanceof InstanceOf/*<T>*/){
             return true;
         }
@@ -14,6 +16,9 @@ public class InstanceOf<T> {
     }
 
     public static void main(String[] args) {
-        System.out.println(new InstanceOf<>() instanceof Object);
+        InstanceOf<String> obj1 = new InstanceOf<>();
+        InstanceOf<String> obj2 = new InstanceOf<>();
+
+        System.out.println(obj1.equals(obj2));
     }
 }
