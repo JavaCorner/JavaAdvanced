@@ -1,6 +1,5 @@
 package com.ab.generics.methods;
 
-import com.ab.generics.classes_and_interfaces.AgeComparator;
 import com.ab.generics.model.Person;
 
 import java.util.ArrayList;
