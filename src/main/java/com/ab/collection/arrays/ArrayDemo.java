@@ -1,7 +1,5 @@
 package com.ab.collection.arrays;
 
-import java.util.Arrays;
-
 /**
  * @author Arpit Bhardwaj
  *
@@ -19,9 +17,8 @@ public class ArrayDemo {
         //int ids[] = new int[10];
         //int ids [] = new int[10];
 
-        //int[] ids;                //not valid as down in when we use it and compiler will complain
         //int[] ids = new int[0];   //valid create an array of length 0
-        int[] ids1;                 //valid as we are not using this in the code
+        int[] ids1;                 //valid as we are not using this in the code but on usage compiler will complain to initialize
         int[] ids2,ids3;
 
         //Accessing and Iteration
@@ -35,7 +32,5 @@ public class ArrayDemo {
         for (int id: ids) {
             System.out.print(id);
         }
-
-        System.out.println();
     }
 }

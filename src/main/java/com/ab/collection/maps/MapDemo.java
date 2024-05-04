@@ -8,6 +8,11 @@ import java.util.Set;
 /**
  * @author Arpit Bhardwaj
  *
+ * The right side of the for-each loop must be one of the following:
+ *      A built-in Java array
+ *      An object whose type implements java.lang.Iterable
+ * Hence, Map is not supported in a for-each loop
+ *
  * No arg constructor creates a set of initial capacity of 16 elements with Default Load Factor = 0.75 (75%)
  * Map is a combination of set and list
  * Keys is basically a set and values is basically a list
@@ -15,8 +20,8 @@ import java.util.Set;
 public class MapDemo {
     public static void main(String[] args) {
         Map<Integer,String> map1 = new HashMap<>(20,0.85F);
-        //read only maps
-        Map<Integer,String> map = Map.of(1,"str1",3,"str2",4,"str3");
+
+        Map<Integer,String> map = Map.of(1,"str1",3,"str2",4,"str3"); //returns read only map
 
         for (Map.Entry entry:
              map.entrySet()) {

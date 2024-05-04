@@ -6,12 +6,6 @@ import java.util.*;
 
 /**
  * @author Arpit Bhardwaj
- *
- * The right side of the for-each loop must be one of the following:
- *      A built-in Java array
- *      An object whose type implements java.lang.Iterable
- *
- * Hence, Map is not supported in a for-each loop
  */
 public class CollectionDemo {
     public static void main(String[] args) {
@@ -44,9 +38,8 @@ public class CollectionDemo {
             Product product = productIterator2.next();
             if(product.getWeight() > 20){
                 System.out.println(product);
-            }
-            else{
-                productIterator2.remove();
+            } else{
+                productIterator2.remove();        //Removes from the underlying collection the last element returned by this iterator
                 //products.remove(product);       //throw ConcurrentModificationException
             }
         }

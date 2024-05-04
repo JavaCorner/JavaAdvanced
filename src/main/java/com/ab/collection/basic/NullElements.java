@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * Map:     Allow at most one null key but multiple null values.
  * TreeSet: Do not allow null values (as it is an ordered set and uses compareTo method internally)
  * TreeMap: Do not allow null keys but multiple null values are allowed
- * Hashtable & ConcurrentHashMap: Do not allow null keys or values is because of multi-threaded environment.
+ * Hashtable & ConcurrentHashMap: Do not allow null keys or values is because of multithreaded environment.
  * CopyOnWriteArrayList:    Allows multiple null elements
  * CopyOnWriteArraySet:     Allow single null element
  *

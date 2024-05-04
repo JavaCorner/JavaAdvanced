@@ -1,6 +1,5 @@
 package com.ab.collection.arrays;
 
-import java.util.Arrays;
 /**
  * @author Arpit Bhardwaj
  *
@@ -28,7 +27,7 @@ public class Varargs {
         walk(1, 2);           // 1
         walk(1, 2, 3);        // 2
         walk(1, new int[] {4, 5});  // 2
-        walk(1,null);        // throws NullPointerException in walk
+        //walk(1,null);        // throws NullPointerException in walk
 
         //varargs can only be used as a method parameter.
         //String... s = "";             //compile error

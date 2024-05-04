@@ -9,10 +9,14 @@ import java.util.*;
  */
 public class ImmutableCollections {
     public static void main(String[] args) {
+
+        List<Integer> readOnlyList1 = List.of(4, 8, 1, 3, 9);       //Returns an unmodifiable list
+        //readOnlyList1.add(6);               //throws UnsupportedOperationException
+
         List<String> list = new ArrayList<>();
         list.add("raj");
-        List<String> readOnlyList1 = Collections.unmodifiableList(list);
-        //readOnlyList1.add("simran");     //throws UnsupportedOperationException
+        List<String> readOnlyList2 = Collections.unmodifiableList(list);
+        //readOnlyList2.add("simran");     //throws UnsupportedOperationException
 
         Set<String> readOnlySet = new HashSet<>();
         readOnlySet = Collections.unmodifiableSet(readOnlySet);

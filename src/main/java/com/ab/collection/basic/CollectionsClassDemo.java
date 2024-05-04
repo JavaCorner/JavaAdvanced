@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class CollectionsClassDemo {
     public static void main(String[] args) {
-        //List<Integer> integerList = List.of(4, 8, 1, 3, 9);       //Returns an unmodifiable list
         List<Integer> integerList = new ArrayList<>(List.of(4, 8, 1, 3, 9));
 
         /******** sorting ********/
@@ -21,7 +20,7 @@ public class CollectionsClassDemo {
         System.out.println(integerList);
 
         /******** searching ********/
-        System.out.println(Collections.binarySearch(integerList,10));
+        System.out.println(Collections.binarySearch(integerList,10)); //(-(insertion point) - 1
 
         /******** misc ********/
         Collections.reverse(integerList);
@@ -31,6 +30,9 @@ public class CollectionsClassDemo {
         System.out.println(integerList);
 
         List<Product> products = new ArrayList<>();
+        Product floorPanel = new Product("Panel", 25);
+        products.add(floorPanel);
+
         Collections.fill(products, new Product("Door",35));
         System.out.println(products);
     }
