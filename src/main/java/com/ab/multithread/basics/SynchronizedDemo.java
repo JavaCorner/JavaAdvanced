@@ -27,15 +27,18 @@ import java.util.stream.IntStream;
 public class SynchronizedDemo {
     static class Counter{
         int count = 0;
+
         /*public int incrementAndGet(){
             count = count + 1;
             return count;
         }*/
+
         //synchronized keyword on instance method,put the below method in blocked state against current instance of this class
         /*public synchronized int incrementAndGet(){
             count = count + 1;
             return count;
         }*/
+
         //synchronized keyword on static method, put the below method in blocked state against the class
         /*public static synchronized int incrementAndGet(){
             count = count + 1;
@@ -61,16 +64,14 @@ public class SynchronizedDemo {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
         Counter counter = new Counter();
         long startTime = System.currentTimeMillis();
+
         IntStream.range(1,1000)
                 .forEach(count -> executorService.submit(counter::incrementAndGet));
-
         executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
-
         executorService.shutdown();
         while(!executorService.isTerminated()){}
 
         System.out.println(counter.incrementAndGet());
-
         long endTime = System.currentTimeMillis();
         System.out.println(endTime - startTime);
     }

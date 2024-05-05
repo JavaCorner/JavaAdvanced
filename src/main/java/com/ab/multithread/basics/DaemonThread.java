@@ -15,11 +15,11 @@ public class DaemonThread {
                 String name = Thread.currentThread().getName();
                 try {
                     while (true){
-                        System.out.println("Running" + name);
+                        System.out.println("Running " + name);
                     }
                 }
                 finally {
-                    System.out.println("Ending" + name);
+                    System.out.println("Ending " + name);
                 }
 
             }

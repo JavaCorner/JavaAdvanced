@@ -33,6 +33,7 @@ public class ExceptionHandler {
 
         //set exception handler only for Thread 1
         //t1.setUncaughtExceptionHandler(exceptionHandler);
+
         //set the default exception handler for the entire
         Thread.setDefaultUncaughtExceptionHandler(exceptionHandler);
         t1.start();

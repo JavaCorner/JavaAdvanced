@@ -23,9 +23,8 @@ public class RaceCondition {
         }
 
         public void incrementL() {
-            synchronized (key){
-                l = l + 1 ;
-            }
+            synchronized (key){l = l + 1 ;}
+            //l = l + 1 ;
         }
     }
 
@@ -37,10 +36,6 @@ public class RaceCondition {
                 longWrapper.incrementL();
             }
         };
-
-        /*Thread t = new Thread(task);
-        t.start();
-        t.join();*/
 
         Thread[] threads = new Thread[1000];
         for (int i = 0; i < threads.length; i++) {

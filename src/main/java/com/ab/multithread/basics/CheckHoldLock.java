@@ -18,10 +18,10 @@ public class CheckHoldLock implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Holds Lock : " + Thread.holdsLock(this));
+        System.out.println("Holds Lock: " + Thread.holdsLock(this));
         synchronized (this){
-            System.out.println("Holds Lock : " + Thread.holdsLock(this));
+            System.out.println("Holds Lock: " + Thread.holdsLock(this));
         }
-        System.out.println("Holds Lock : " + Thread.holdsLock(this));
+        System.out.println("Holds Lock: " + Thread.holdsLock(this));
     }
 }

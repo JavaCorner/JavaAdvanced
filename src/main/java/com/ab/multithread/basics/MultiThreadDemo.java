@@ -13,37 +13,38 @@ package com.ab.multithread.basics;
  * Using runnable will give you an object that can be shared amongst multiple threads.
  *
  * Thread Lifecycle
- *      NEW : Thread has not yet started
- *      RUNNABLE : Thread is executing
- *      BLOCKED : Thread is blocked, waiting for monitor lock to be released
- *      WAITING : Thread is waiting as long as it takes for another thread's signal
- *      TIMED_WAITING : Thread is waiting for a specified period of time
- *      TERMINATED : Thread is exited
+ *      NEW:            Thread has not yet started
+ *      RUNNABLE:       Thread is executing
+ *      BLOCKED:        Thread is blocked, waiting for monitor lock to be released
+ *      WAITING:        Thread is waiting as long as it takes for another thread's signal
+ *      TIMED_WAITING:  Thread is waiting for a specified period of time
+ *      TERMINATED:     Thread is exited
  */
 public class MultiThreadDemo {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(Thread.currentThread().getName() + " is running");
 
-        Runnable runnable1 = ()-> {System.out.println("I am running in " + Thread.currentThread().getName());};
-        Thread t1 = new Thread(runnable1);
+        //************* Extending the Thread class *************//
+        MultiThread1 t1 = new MultiThread1();
         t1.setName("Thread t1");
-        //The purpose of start() is to create a separate call stack for the thread.
-        // A separate call stack is created by it, and then run() is called by JVM.
         t1.start();
-        //t1.run(); //not run as a separate thread instead as part of main thread
+        t1.join(); //put the current thread on wait until the thread on which it is called is dead.
 
-        MultiThread1 t2 = new MultiThread1();
+        //************* Implementing the Runnable Interface *************//
+        Runnable runnable2 = new MultiThread2();
+        Thread t2 = new Thread(runnable2);
         t2.setName("Thread t2");
         t2.start();
-        //It will put the current thread on wait until the thread on which it is called is dead.
-        t2.join();
+        t2.join(10); //put the current thread on wait until the thread on which it is called is dead or wait for specified time
 
-        Runnable runnable2 = new MultiThread2();
-        Thread t3 = new Thread(runnable2);
+        //************* Implementing the Anonymous Runnable Interface *************//
+        Runnable runnable1 = ()-> System.out.println(Thread.currentThread().getName() + " is running");
+        Thread t3 = new Thread(runnable1);
         t3.setName("Thread t3");
+        //The purpose of start() is to create a separate call stack for the thread.
+        // A separate call stack is created by it, and then run() is called by JVM.
         t3.start();
-        //It will put the current thread on wait until the thread on which it is called is dead or wait for specified time
-        t3.join(10);
+        //t3.run(); //not run as a separate thread instead as part of main thread
 
         System.out.println(Thread.currentThread().getName() + " is finished");
     }
@@ -57,7 +58,6 @@ public class MultiThreadDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             System.out.println(Thread.currentThread().getName() + " is finished");
         }
     }
@@ -71,7 +71,6 @@ public class MultiThreadDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             System.out.println(Thread.currentThread().getName() + " is finished");
         }
     }
