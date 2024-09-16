@@ -26,7 +26,7 @@ public class ComparatorDemo {
         Utils.printArray(workerArr);
 
         //can pass on the fly anonymous comparator
-        Arrays.sort(workerArr, new Comparator<Worker>() {
+        Arrays.sort(workerArr, new Comparator<>() {
             @Override
             public int compare(Worker o1, Worker o2) {
                 return (int) (o1.getSalary() - o2.getSalary());
@@ -38,11 +38,11 @@ public class ComparatorDemo {
         //Sort on multiple fields – Group by sort
         //Method 1
         //compare two worker object first on their id and if they are same then on the name.
-        Arrays.sort(workerArr, new Comparator<Worker>() {
+        Arrays.sort(workerArr, new Comparator<>() {
             @Override
             public int compare(Worker o1, Worker o2) {
                 int flag = o1.getId() - o2.getId();
-                if(flag==0) flag = o1.getFirstName().compareTo(o2.getFirstName());
+                if (flag == 0) flag = o1.getFirstName().compareTo(o2.getFirstName());
                 return flag;
             }
         });
